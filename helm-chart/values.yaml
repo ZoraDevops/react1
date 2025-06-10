@@ -1,0 +1,22 @@
+replicaCount: 2
+
+image:
+  repository: 192.168.10.222:5001/zora-fe
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  host: zora.local  # replace with your real domain
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi

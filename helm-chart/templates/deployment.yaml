@@ -21,6 +21,7 @@ spec:
           ports:
             - containerPort: 80
           resources:
-            limits:
-              cpu: {{ .Values.resources.limits.cpu }}
-              memory: {{ . }}
+            {{- toYaml .Values.resources | nindent 12 }}
+`` correctly as YAML.
+
+---
